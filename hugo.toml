@@ -12,6 +12,7 @@ theme = 'PaperMod'
   comments = true
   defaultTheme = "auto"
   ShowToc = true
+  ShowArchive = true
 
 [params.cover]
     linkFullImages = true
@@ -37,6 +38,12 @@ theme = 'PaperMod'
     identifier = "tags"
     name = "tags"
     url = "/tags/"
+    weight = 30
+
+  [[menu.main]]
+    identifier = "archive"
+    name = "archive"
+    url = "/archives/"
     weight = 30
 
 [outputs]
