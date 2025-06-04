@@ -1,0 +1,41 @@
+baseURL = 'https://www.groenewoud.ch/'
+languageCode = 'en-us'
+title = 'My New Hugo Site'
+theme = 'PaperMod'
+
+[Params]
+  env = 'production'
+  ShowReadingTime = true
+  ShowShareButtons = true
+  ShowCodeCopyButtons = true
+  author = ["Frank"]
+  comments = true
+
+[params.cover]
+    linkFullImages = true
+
+[taxonomies]
+  tag = 'tags'
+
+[menu]
+
+[[menu.main]]
+    identifier = "home"
+    name = "home"
+    url = "/"
+    weight = 10
+
+  [[menu.main]]
+    identifier = "search"
+    name = "search"
+    url = "/search/"
+    weight = 20
+
+  [[menu.main]]
+    identifier = "tags"
+    name = "tags"
+    url = "/tags/"
+    weight = 30
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]

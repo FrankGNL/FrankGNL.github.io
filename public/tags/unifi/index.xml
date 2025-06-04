@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Unifi on My New Hugo Site</title>
+    <link>https://www.groenewoud.ch/tags/unifi/</link>
+    <description>Recent content in Unifi on My New Hugo Site</description>
+    <generator>Hugo -- 0.147.7</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 04 Jun 2025 07:58:34 +0200</lastBuildDate>
+    <atom:link href="https://www.groenewoud.ch/tags/unifi/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Mastering Ad Blocking: Upgrading to Unifi Cloud Gateway with OISD Lists</title>
+      <link>https://www.groenewoud.ch/posts/oisd_ads_blocking_on-_ucg/</link>
+      <pubDate>Wed, 04 Jun 2025 07:58:34 +0200</pubDate>
+      <guid>https://www.groenewoud.ch/posts/oisd_ads_blocking_on-_ucg/</guid>
+      <description>&lt;p&gt;Exploring the transition from Control D to Unifi Cloud Gateway for ad-blocking with OISD lists. Understand the inner workings of Unifi’s DNS filtering system and how to leverage OISD domain blocklists efficiently.&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://cdn-images-1.medium.com/max/1600/1*q9Zs0_86-2rskBvMgSrf1w@2x.jpeg&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;the-reason&#34;&gt;The reason&lt;/h3&gt;
+&lt;p&gt;I’ve been a longtime user of  &lt;a href=&#34;https://www.controld.com/&#34;&gt;Control D&lt;/a&gt;, primarily for bypassing geo-restricted video services and blocking ads for all users on my home network. In recent years, Control D has introduced community-based ad block lists. After trying many of them and receiving complaints from my partner, I settled on  &lt;a href=&#34;https://oisd.nl/&#34;&gt;OISD&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
