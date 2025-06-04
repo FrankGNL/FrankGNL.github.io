@@ -6,12 +6,12 @@
     <description>Recent content in Controld on My Blog</description>
     <generator>Hugo -- 0.147.7</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 04 Jun 2025 07:58:34 +0200</lastBuildDate>
+    <lastBuildDate>Thu, 09 May 2024 07:58:34 +0200</lastBuildDate>
     <atom:link href="https://www.groenewoud.ch/tags/controld/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Mastering Ad Blocking: Upgrading to Unifi Cloud Gateway with OISD Lists</title>
       <link>https://www.groenewoud.ch/posts/oisd_ads_blocking_on-_ucg/</link>
-      <pubDate>Wed, 04 Jun 2025 07:58:34 +0200</pubDate>
+      <pubDate>Thu, 09 May 2024 07:58:34 +0200</pubDate>
       <guid>https://www.groenewoud.ch/posts/oisd_ads_blocking_on-_ucg/</guid>
       <description>&lt;p&gt;Exploring the transition from Control D to Unifi Cloud Gateway for ad-blocking with OISD lists. Understand the inner workings of Unifi’s DNS filtering system and how to leverage OISD domain blocklists efficiently.&lt;/p&gt;
 &lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://cdn-images-1.medium.com/max/1600/1*q9Zs0_86-2rskBvMgSrf1w@2x.jpeg&#34;&gt;&lt;/p&gt;
