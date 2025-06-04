@@ -1,15 +1,17 @@
 baseURL = 'https://www.groenewoud.ch/'
 languageCode = 'en-us'
-title = 'My New Hugo Site'
+title = 'My Blog'
 theme = 'PaperMod'
 
 [Params]
-  env = 'production'
+  env = "production"
   ShowReadingTime = true
   ShowShareButtons = true
   ShowCodeCopyButtons = true
   author = ["Frank"]
   comments = true
+  defaultTheme = "auto"
+  ShowToc = true
 
 [params.cover]
     linkFullImages = true

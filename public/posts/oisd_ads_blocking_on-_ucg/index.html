@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
-<title>Mastering Ad Blocking: Upgrading to Unifi Cloud Gateway with OISD Lists | My New Hugo Site</title>
+<title>Mastering Ad Blocking: Upgrading to Unifi Cloud Gateway with OISD Lists | My Blog</title>
 <meta name="keywords" content="Unifi, DNS, Ad Blocking, Controld, Ubiquiti">
 <meta name="description" content="Exploring the transition from Control D to Unifi Cloud Gateway for ad-blocking with OISD lists. Understand the inner workings of Unifi’s DNS filtering system and how to leverage OISD domain blocklists efficiently.
 
@@ -62,7 +62,7 @@ I’ve been a longtime user of  Control D, primarily for bypassing geo-restricte
     id="pianjs"
     data-code="7ESGrvguPYaEpA0siNYox28jL5NQnhVt"></script>
 <meta property="og:url" content="https://www.groenewoud.ch/posts/oisd_ads_blocking_on-_ucg/">
-  <meta property="og:site_name" content="My New Hugo Site">
+  <meta property="og:site_name" content="My Blog">
   <meta property="og:title" content="Mastering Ad Blocking: Upgrading to Unifi Cloud Gateway with OISD Lists">
   <meta property="og:description" content="Exploring the transition from Control D to Unifi Cloud Gateway for ad-blocking with OISD lists. Understand the inner workings of Unifi’s DNS filtering system and how to leverage OISD domain blocklists efficiently.
 The reason I’ve been a longtime user of Control D, primarily for bypassing geo-restricted video services and blocking ads for all users on my home network. In recent years, Control D has introduced community-based ad block lists. After trying many of them and receiving complaints from my partner, I settled on OISD.">
@@ -129,7 +129,7 @@ I’ve been a longtime user of  Control D, primarily for bypassing geo-restricte
   },
   "publisher": {
     "@type": "Organization",
-    "name": "My New Hugo Site",
+    "name": "My Blog",
     "logo": {
       "@type": "ImageObject",
       "url": "https://www.groenewoud.ch/favicon.ico"
@@ -154,7 +154,7 @@ I’ve been a longtime user of  Control D, primarily for bypassing geo-restricte
 <header class="header">
     <nav class="nav">
         <div class="logo">
-            <a href="https://www.groenewoud.ch/" accesskey="h" title="My New Hugo Site (Alt + H)">My New Hugo Site</a>
+            <a href="https://www.groenewoud.ch/" accesskey="h" title="My Blog (Alt + H)">My Blog</a>
             <div class="logo-switches">
                 <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
                     <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
@@ -208,7 +208,67 @@ I’ve been a longtime user of  Control D, primarily for bypassing geo-restricte
     <div class="post-meta"><span title='2025-06-04 07:58:34 +0200 CEST'>June 4, 2025</span>&nbsp;·&nbsp;9 min&nbsp;·&nbsp;Frank
 
 </div>
-  </header> 
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul><ul><ul>
+                <li>
+                    <a href="#the-reason" aria-label="The reason">The reason</a></li>
+                <li>
+                    <a href="#investigate-how-ucg-is-working-with-ad-blocking" aria-label="Investigate how UCG is working with Ad blocking">Investigate how UCG is working with Ad blocking</a><ul>
+                        
+                <li>
+                    <a href="#dns-resolver" aria-label="DNS Resolver">DNS Resolver</a></li>
+                <li>
+                    <a href="#dns-filtering" aria-label="DNS Filtering">DNS Filtering</a></li></ul>
+                </li></ul>
+                    </ul>
+                    
+                <li>
+                    <a href="#configuration-of-dns-forwarder" aria-label="Configuration of DNS Forwarder">Configuration of DNS Forwarder</a><ul>
+                        <ul>
+                        <ul>
+                        
+                <li>
+                    <a href="#how-we-use-oisd-as-domain-blocking-list" aria-label="How we use OISD as domain blocking list">How we use OISD as domain blocking list</a></li>
+                <li>
+                    <a href="#download-and-alter-the-dnsmasq2-file-from-oisdnl" aria-label="Download and alter the dnsmasq2 file from oisd.nl">Download and alter the dnsmasq2 file from oisd.nl</a></li>
+                <li>
+                    <a href="#copy-the-content-to-adsblockipv4list-and-adsblockipv6list" aria-label="Copy the content to adsblockipv4.list and adsblockipv6.list">Copy the content to adsblockipv4.list and adsblockipv6.list</a></li>
+                <li>
+                    <a href="#restart-utm_dns_filter_capture" aria-label="Restart utm_dns_filter_capture">Restart utm_dns_filter_capture</a></li></ul>
+                    </ul>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#restart-utm_dns_filter_capture-1" aria-label="Restart utm_dns_filter_capture">Restart utm_dns_filter_capture</a><ul>
+                        <ul>
+                        <ul>
+                        
+                <li>
+                    <a href="#restart-dnsmasq" aria-label="Restart dnsmasq">Restart dnsmasq</a></li>
+                <li>
+                    <a href="#the-complete-script" aria-label="the complete script">the complete script</a></li></ul>
+                    
+                <li>
+                    <a href="#automate-the-script-to-run-during-the-night" aria-label="Automate the script to run during the night">Automate the script to run during the night</a><ul>
+                        
+                <li>
+                    <a href="#testing" aria-label="Testing">Testing</a>
+                </li>
+            </ul>
+            </ul>
+            </li>
+            </ul>
+            </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
   <div class="post-content"><p>Exploring the transition from Control D to Unifi Cloud Gateway for ad-blocking with OISD lists. Understand the inner workings of Unifi’s DNS filtering system and how to leverage OISD domain blocklists efficiently.</p>
 <p><img loading="lazy" src="https://cdn-images-1.medium.com/max/1600/1*q9Zs0_86-2rskBvMgSrf1w@2x.jpeg"></p>
 <h3 id="the-reason">The reason<a hidden class="anchor" aria-hidden="true" href="#the-reason">#</a></h3>
@@ -662,7 +722,7 @@ address=/00518b6f0c.com/#
     </main>
     
 <footer class="footer">
-        <span>&copy; 2025 <a href="https://www.groenewoud.ch/">My New Hugo Site</a></span> · 
+        <span>&copy; 2025 <a href="https://www.groenewoud.ch/">My Blog</a></span> · 
 
     <span>
         Powered by
