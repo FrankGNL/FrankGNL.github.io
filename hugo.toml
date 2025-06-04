@@ -14,8 +14,8 @@ theme = 'PaperMod'
 [params.cover]
     linkFullImages = true
 
-[params.pirsch]
- code = "7ESGrvguPYaEpA0siNYox28jL5NQnhVt"
+[params.assets]
+  customJS = ["js/pirsch.js"]
 
 [taxonomies]
   tag = 'tags'
