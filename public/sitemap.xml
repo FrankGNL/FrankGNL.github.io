@@ -2,33 +2,33 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://www.groenewoud.ch/tags/ad-blocking/</loc>
+    <loc>http://localhost:1313/tags/ad-blocking/</loc>
     <lastmod>2025-06-04T07:58:34+02:00</lastmod>
   </url><url>
-    <loc>https://www.groenewoud.ch/tags/controld/</loc>
+    <loc>http://localhost:1313/tags/controld/</loc>
     <lastmod>2025-06-04T07:58:34+02:00</lastmod>
   </url><url>
-    <loc>https://www.groenewoud.ch/tags/dns/</loc>
+    <loc>http://localhost:1313/tags/dns/</loc>
     <lastmod>2025-06-04T07:58:34+02:00</lastmod>
   </url><url>
-    <loc>https://www.groenewoud.ch/posts/oisd_ads_blocking_on-_ucg/</loc>
+    <loc>http://localhost:1313/posts/oisd_ads_blocking_on-_ucg/</loc>
     <lastmod>2025-06-04T07:58:34+02:00</lastmod>
   </url><url>
-    <loc>https://www.groenewoud.ch/</loc>
+    <loc>http://localhost:1313/</loc>
     <lastmod>2025-06-04T07:58:34+02:00</lastmod>
   </url><url>
-    <loc>https://www.groenewoud.ch/posts/</loc>
+    <loc>http://localhost:1313/posts/</loc>
     <lastmod>2025-06-04T07:58:34+02:00</lastmod>
   </url><url>
-    <loc>https://www.groenewoud.ch/tags/</loc>
+    <loc>http://localhost:1313/tags/</loc>
     <lastmod>2025-06-04T07:58:34+02:00</lastmod>
   </url><url>
-    <loc>https://www.groenewoud.ch/tags/ubiquiti/</loc>
+    <loc>http://localhost:1313/tags/ubiquiti/</loc>
     <lastmod>2025-06-04T07:58:34+02:00</lastmod>
   </url><url>
-    <loc>https://www.groenewoud.ch/tags/unifi/</loc>
+    <loc>http://localhost:1313/tags/unifi/</loc>
     <lastmod>2025-06-04T07:58:34+02:00</lastmod>
   </url><url>
-    <loc>https://www.groenewoud.ch/search/</loc>
+    <loc>http://localhost:1313/search/</loc>
   </url>
 </urlset>
