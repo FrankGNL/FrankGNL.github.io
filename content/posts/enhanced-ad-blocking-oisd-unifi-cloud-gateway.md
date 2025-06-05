@@ -1,7 +1,7 @@
 +++
 date = '2024-05-09T07:58:34+02:00'
 draft = false
-title = 'Mastering Ad Blocking: Upgrading to Unifi Cloud Gateway with OISD Lists'
+title = 'Master Ad Blocking with Unifi Cloud Gateway + OISD Lists'
 tags = ["Unifi", "DNS", "Ad Blocking", "Controld", "Ubiquiti"]
 description = "Streamline ad blocking transition from Control D to Unifi Cloud Gateway. Utilize OISD lists for optimal DNS filtering. Boost network security."
 images = ["https://cdn-images-1.medium.com/max/1600/1*q9Zs0_86-2rskBvMgSrf1w@2x.jpeg"]
@@ -88,7 +88,7 @@ Let’s start by examining the configuration file to understand which lists are 
 ```bash
 root@Router:~# cat /run/dnsfilter/dns-172.31.4.1-conf.conf  
 ```
-# Configuration of DNS Forwarder  
+## Configuration of DNS Forwarder  
 ```bash
 interface=dnsfilter0  
 no-dhcp-interface=dnsfilter0  
@@ -311,7 +311,7 @@ Super easy, be that is needed to fill the file  **/run/dnsfilter/dns-172.31.4.1-
 
 #### Restart utm_dns_filter_capture
 
-# Restart utm_dns_filter_capture  
+## Restart utm_dns_filter_capture  
 ```bash
 if [ -s /run/utm_dns_filter_capture.pid ]; then  
     UTM_DNS_FILTER_CAPTURE_PID=$(cat /run/utm_dns_filter_capture.pid)  
