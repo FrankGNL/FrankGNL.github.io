@@ -247,11 +247,11 @@ All data mounted on the  **/persistent**  volume (as the name suggests) will be 
 
 I’ve developed a script that accomplishes the following tasks:
 
--   Downloads the  **dnsmasq2**  file from oisd.nl.
--   - Modifies the file to match the syntax of the original file.
--   - Copies the content to  **adsblockipv4.list**  and  **adsblockipv6.list**.
--   - Restarts the  **utm_dns_filter_capture**.
--   - Restarts  **dnsmasq**.
+- Downloads the  **dnsmasq2**  file from oisd.nl.
+- Modifies the file to match the syntax of the original file.
+- Copies the content to  **adsblockipv4.list**  and  **adsblockipv6.list**.
+- Restarts the  **utm_dns_filter_capture**.
+- Restarts  **dnsmasq**.
 
 ### Download and alter the dnsmasq2 file from oisd.nl
 
