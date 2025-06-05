@@ -22,6 +22,7 @@ canonifyURLs = true
   ShowReadingTime = true
   ShowBreadCrumbs = true
   ShowPostNavLinks = true
+  description = "A blog about tech experiments, network setups, and practical guides on self-hosting and privacy tools."
 
 [params.cover]
     linkFullImages = true
