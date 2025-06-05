@@ -3,6 +3,9 @@ date = '2024-05-09T07:58:34+02:00'
 draft = false
 title = 'Mastering Ad Blocking: Upgrading to Unifi Cloud Gateway with OISD Lists'
 tags = ["Unifi", "DNS", "Ad Blocking", "Controld", "Ubiquiti"]
+description = "Streamline ad blocking transition from Control D to Unifi Cloud Gateway. Utilize OISD lists for optimal DNS filtering. Boost network security."
+images = ["https://cdn-images-1.medium.com/max/1600/1*q9Zs0_86-2rskBvMgSrf1w@2x.jpeg"]
+slug = "enhanced-ad-blocking-oisd-unifi-cloud-gateway"
 +++
 
 Exploring the transition from Control D to Unifi Cloud Gateway for ad-blocking with OISD lists. Understand the inner workings of Unifi’s DNS filtering system and how to leverage OISD domain blocklists efficiently.

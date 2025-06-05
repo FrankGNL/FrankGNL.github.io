@@ -2,17 +2,25 @@ baseURL = 'https://www.groenewoud.ch/'
 languageCode = 'en-us'
 title = 'My Blog'
 theme = 'PaperMod'
+enableRobotsTXT = true
+canonifyURLs = true
+
+[minify]
+  disableXML = false
+  minifyOutput = true
 
 [Params]
   env = "production"
-  ShowReadingTime = true
-  ShowShareButtons = true
   ShowCodeCopyButtons = true
   author = ["Frank"]
   comments = true
   defaultTheme = "auto"
   ShowToc = true
   ShowArchive = true
+  ShowShareButtons = true
+  ShowReadingTime = true
+  ShowBreadCrumbs = true
+  ShowPostNavLinks = true
 
 [params.cover]
     linkFullImages = true
