@@ -11,6 +11,7 @@ canonifyURLs = true
   minifyOutput = true
 
 [Params]
+  showFullContent = true
   env = "production"
   ShowCodeCopyButtons = true
   author = ["Frank"]
