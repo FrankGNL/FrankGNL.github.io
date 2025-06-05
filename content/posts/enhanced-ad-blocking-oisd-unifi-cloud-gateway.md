@@ -12,7 +12,7 @@ Exploring the transition from Control D to Unifi Cloud Gateway for ad-blocking w
 
 ![](https://cdn-images-1.medium.com/max/1600/1*q9Zs0_86-2rskBvMgSrf1w@2x.jpeg)
 
-### The reason
+## The reason
 
 I’ve been a longtime user of  [Control D](https://www.controld.com/), primarily for bypassing geo-restricted video services and blocking ads for all users on my home network. In recent years, Control D has introduced community-based ad block lists. After trying many of them and receiving complaints from my partner, I settled on  [OISD](https://oisd.nl/).
 
@@ -20,7 +20,7 @@ One of my main issues with Control D is occasional slow DNS responses and, once 
 
 Last month, I switched from my Fritzbox router to a Unifi Cloud Gateway, which also supports adblocking. I decided to give this new adblocking feature a try so that I can stop using Control D, as I no longer need it for bypassing geo-restricted video services.
 
-### Investigate how UCG is working with Ad blocking
+## Investigate how UCG is working with Ad blocking
 
 Within the Unifi Network settings under  **Settings**  >>  **Security**, you can enable ad blocking for specific networks:
 
@@ -50,7 +50,7 @@ There are two configuration files:
 -   dns resolver
 -   dns filtering
 
-#### DNS Resolver
+### DNS Resolver
 
 The content of the resolv.conf is:
 ```bash
@@ -82,7 +82,7 @@ These iptables rules ensure that DNS requests from the specified networks are fo
 
 Now that we understand how Unifi implements ad blocking, the next question is: which domains are being blocked?
 
-#### DNS Filtering
+### DNS Filtering
 
 Let’s start by examining the configuration file to understand which lists are currently active:
 ```bash
@@ -219,7 +219,7 @@ So, does it start the process every day at 00:00?
 
 Upon further examination of the script, I discovered that the  **splay**  option introduces a random sleep
 
-#### How we use OISD as domain blocking list
+### How we use OISD as domain blocking list
 
 You can find all the lists on the  [OISD](https://oisd.nl/)  website, including the comprehensive OISD big list:
 
@@ -253,7 +253,7 @@ I’ve developed a script that accomplishes the following tasks:
 -   - Restarts the  **utm_dns_filter_capture**.
 -   - Restarts  **dnsmasq**.
 
-#### Download and alter the dnsmasq2 file from oisd.nl
+### Download and alter the dnsmasq2 file from oisd.nl
 
 Here’s an example layout of the downloaded file:
 ```
@@ -300,7 +300,7 @@ address=/002777.xyz/#
 address=/00280181d0.com/#  
 address=/00518b6f0c.com/#
 ```
-#### Copy the content to adsblockipv4.list and adsblockipv6.list
+### Copy the content to adsblockipv4.list and adsblockipv6.list
 
 To copy the content over to the  **adsblockipv4.list**  and  **adsblockipv6.list**  files, you can use the following commands:
 ```bash
@@ -309,10 +309,10 @@ cat "${BASE}"/dnsmasq2 > /run/utm/adsblockipv6.list
 ```
 Super easy, be that is needed to fill the file  **/run/dnsfilter/dns-172.31.4.1-ads.list**
 
-#### Restart utm_dns_filter_capture
+### Restart utm_dns_filter_capture
 
-## Restart utm_dns_filter_capture  
 ```bash
+# Restart utm_dns_filter_capture  
 if [ -s /run/utm_dns_filter_capture.pid ]; then  
     UTM_DNS_FILTER_CAPTURE_PID=$(cat /run/utm_dns_filter_capture.pid)  
     log "utm_dns_filter_capture PID file found, restart service."  
@@ -323,7 +323,7 @@ fi
 ```
 In this script snippet inspired by UniFi, we’re checking for the  **utm_dns_filter_capture**  process by its PID (Process ID). If the process is found, the script terminates it. Subsequently, the system automatically restarts the daemon.
 
-#### Restart dnsmasq
+### Restart dnsmasq
 
 Finally, we need to restart DNSMasq to load the updated list and enable domain blocking.
 ```bash
@@ -345,7 +345,7 @@ restartdnsfilter
 ```
 This section of the script is also adapted from the Unifi script. Similarly, it terminates the process, but the key distinction is that it initiates the process independently rather than relying on the system to do so.
 
-#### the complete script
+### the complete script
 
 Putting it all together will make the following script:
 ```bash
@@ -424,7 +424,7 @@ I added the new script at the end with a random timer using splay and the && ope
 
 **NOTE: Please be aware that after every reboot or firmware update, the cronjob adjustments will be reset.**
 
-#### Testing
+### Testing
 
 After manually running the script or waiting until the next day, we can test if it is working. This test should be conducted from a network where ad blocking has been enabled.
 ```bash
