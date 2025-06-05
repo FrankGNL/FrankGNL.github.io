@@ -11,6 +11,7 @@ canonifyURLs = true
   minifyOutput = true
 
 [Params]
+  listTitle = "Latest tech guides and notes"
   showFullContent = true
   env = "production"
   ShowCodeCopyButtons = true
