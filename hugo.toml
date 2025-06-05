@@ -1,6 +1,7 @@
 baseURL = 'https://www.groenewoud.ch/'
 languageCode = 'en-us'
 title = 'My Blog about random tech stuff'
+description = "A blog about tech experiments, network setups, and practical guides on self-hosting and privacy tools."
 theme = 'PaperMod'
 enableRobotsTXT = true
 canonifyURLs = true
